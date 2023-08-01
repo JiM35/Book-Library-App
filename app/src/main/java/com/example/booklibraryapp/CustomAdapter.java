@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
-    private Context context;
+    private final Context context;
     private ArrayList book_id, book_title, book_author, book_pages;
 
     CustomAdapter(Context context, ArrayList book_id, ArrayList book_title, ArrayList book_author, ArrayList book_pages) {
@@ -45,7 +45,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         return book_id.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView book_id_txt, book_title_txt, book_author_txt, book_pages_txt;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
