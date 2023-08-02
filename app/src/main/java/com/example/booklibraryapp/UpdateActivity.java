@@ -3,7 +3,6 @@ package com.example.booklibraryapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -23,13 +22,18 @@ public class UpdateActivity extends AppCompatActivity {
         author_input = findViewById(R.id.author_input_2);
         pages_input = findViewById(R.id.pages_input_2);
         update_button = findViewById(R.id.update_button);
-        update_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
+        //        First we call this
         getAndSetIntentData();
+
+        update_button.setOnClickListener((view) -> {
+//            And only then we call this
+            MyDatabaseHelper myDB = new MyDatabaseHelper(UpdateActivity.this);
+            title = title_input.getText().toString().trim();
+            author = author_input.getText().toString().trim();
+            pages = pages_input.getText().toString().trim();
+            myDB.updateData(id, title, author, pages);
+        });
     }
 
     void getAndSetIntentData() {
