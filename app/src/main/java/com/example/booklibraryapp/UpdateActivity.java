@@ -1,5 +1,6 @@
 package com.example.booklibraryapp;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -25,6 +26,12 @@ public class UpdateActivity extends AppCompatActivity {
 
         //        First we call this
         getAndSetIntentData();
+
+//        Set actionbar title after getAndSetIntentData method
+        ActionBar ab = getSupportActionBar();
+        if (ab != null) {
+            ab.setTitle(title);
+        }
 
         update_button.setOnClickListener((view) -> {
 //            And only then we call this
