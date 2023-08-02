@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         book_pages = new ArrayList<>();
 
         storeDataInArrays();
+
         customAdapter = new CustomAdapter(MainActivity.this, book_id, book_title, book_author, book_pages);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     void storeDataInArrays(){
         Cursor cursor = myDB.readAllData();
         if (cursor.getCount() == 0) {  // Means there is no data
-            Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No data", Toast.LENGTH_SHORT).show();
         } else {
             while (cursor.moveToNext()) {
                 book_id.add(cursor.getString(0));  // 0 means we are going to read the first column

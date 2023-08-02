@@ -1,3 +1,5 @@
+// AddActivity
+
 package com.example.booklibraryapp;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,10 +24,12 @@ public class AddActivity extends AppCompatActivity {
         pages_input = findViewById(R.id.pages_input);
         add_button = findViewById(R.id.add_button);
         add_button.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 MyDatabaseHelper myDatabaseHelper = new MyDatabaseHelper(AddActivity.this);
-                myDatabaseHelper.addBook(title_input.getText().toString().trim(), author_input.getText().toString().trim(), Integer.valueOf(pages_input.getText().toString().trim()));
+                myDatabaseHelper.addBook(title_input.getText().toString().trim(), author_input.getText().toString().trim(),
+                        Integer.valueOf(pages_input.getText().toString().trim()));
             }
         });
     }

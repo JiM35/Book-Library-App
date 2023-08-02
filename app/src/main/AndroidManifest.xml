@@ -13,12 +13,13 @@
         android:theme="@style/Theme.BookLibraryApp"
         tools:targetApi="31">
         <activity
-            android:label="Add Book"
-            android:name=".AddActivity"
-            android:parentActivityName=".MainActivity"
+            android:name=".UpdateActivity"
             android:exported="false" />
-
-        <!-- Add the launch activity here -->
+        <activity
+            android:name=".AddActivity"
+            android:exported="false"
+            android:label="Add Book"
+            android:parentActivityName=".MainActivity" /> <!-- Add the launch activity here -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
